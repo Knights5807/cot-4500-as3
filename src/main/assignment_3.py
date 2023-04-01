@@ -25,7 +25,7 @@ range_euler = (0, 2)
 iter_euler = 10
 initial_euler = 1
 
-print(euler_method(function_euler, range_euler, iter_euler, initial_euler))
+print('%.5f' % euler_method(function_euler, range_euler, iter_euler, initial_euler))
 print()
 
 
@@ -58,7 +58,7 @@ range_rk = (0, 2)
 iter_rk = 10
 initial_rk = 1
 
-print(runge_kutta(function_rk, range_rk, iter_rk, initial_rk))
+print('%.5f' % runge_kutta(function_rk, range_rk, iter_rk, initial_rk))
 print()
 
 
@@ -77,7 +77,7 @@ for i in range(g_array.shape[0]):
 x = np.zeros(g_array.shape[0])
 for i in range(g_array.shape[0] - 1, -1, -1):
     x[i] = (g_array[i, -1] - np.dot(g_array[i, :-1], x)) / g_array[i, i]
-x = x.astype(int)
+x = x.astype(dtype=np.double)
 
 print(x)
 print()
@@ -104,7 +104,7 @@ def lu_factorization(array):
 L, U = lu_factorization(lu_array)
 determinant = np.linalg.det(U)
 
-print(determinant)
+print('%.5f' %determinant)
 print()
 print(L)
 print()
